@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, minimum-width=320"
+    />
+    <meta
+      name="description"
+      content="A very small web app that enables you to parse GitHub Markdown and grab checked boxes as JSON data."
+    />
+    <meta name="keywords" content="GitHub, markdown, parse, JSON, html, text" />
+    <title>GitHub Pull Request Body Parser</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="jsdoc.js"></script>
+    <script async defer type="module" src="main.js"></script>
+    <script async defer type="module" src="switcher.js"></script>
+    <script async defer type="module" src="trademark.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <div data-pr-container>
+        <div data-pr-actions>
+          <switch-roo
+            id="viewModeToggle"
+            title="Toggle states between HTML and Raw rendering"
+          ></switch-roo>
+          <switch-roo
+            id="stateModeToggle"
+            data-labels="edit|view"
+            title="Toggle states between HTML and Raw rendering"
+            style="--state-not-checked: rgb(182 76 169)"
+          ></switch-roo>
+        </div>
+        <div
+          data-pr-body
+          title="Double click anywhere in this block to start editing"
+        ></div>
+      </div>
+      <div data-result>
+        <div data-json-actions>
+          <button
+            data-copy
+            data-state="false"
+            title="Copy JSON data from below to your clipboard"
+          ></button>
+          <button
+            data-wrapper
+            data-state="false"
+            title="Toggle the layout view of the data for better readability"
+          ></button>
+        </div>
+        <div data-json-block><code></code></div>
+      </div>
+    </main>
+    <footer><trade-mark></trade-mark>2023©️</footer>
+  </body>
+</html>

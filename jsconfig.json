@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "classic",
+    "target": "ES2022",
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "baseUrl": "src"
+  }
+}

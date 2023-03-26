@@ -1,0 +1,27 @@
+{
+  "name": "gh-markdown-to-json",
+  "version": "1.0.0",
+  "description": "A lightweight simple JS, CSS, HTML web app to extract info as JSON data from GitHub Markdown.",
+  "main": "src/main.js",
+  "author": "Alban Nurkollari",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/albannurkollari/gh-markdown-to-json.git"
+  },
+  "bugs": {
+    "url": "https://github.com/albannurkollari/gh-markdown-to-json/issues"
+  },
+  "homepage": "https://github.com/albannurkollari/gh-markdown-to-json#readme",
+  "keywords": [
+    "github",
+    "markdown",
+    "JSON",
+    "JS",
+    "CSS",
+    "HTML",
+    "parse",
+    "extract",
+    "transform"
+  ]
+}

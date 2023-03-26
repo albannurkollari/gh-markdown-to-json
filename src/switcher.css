@@ -1,0 +1,179 @@
+:host {
+  display: block;
+  padding: 10px;
+  width: fit-content;
+
+  --size-width: 120px;
+  --size-height: 40px;
+  --size-sliding: calc(var(--size-width) / 2);
+  --start-pos: 5px;
+  --label-start-pos: 12px;
+  --state-not-checked: rgb(30 30 30);
+  --state-checked: rgb(255 255 255);
+  --secondary-color: rgb(204 204 204 / 50%);
+}
+
+:host([sticky='true']) {
+  position: absolute;
+  top: 0;
+  right: var(--padding);
+}
+
+.switcheroo-container {
+  display: flex;
+}
+
+.switcher {
+  position: relative;
+  width: var(--size-width);
+  height: var(--size-height);
+  border-radius: 25px;
+}
+.switcher * {
+  cursor: pointer;
+}
+
+.switcher input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  width: var(--size-width);
+  height: var(--size-height);
+  border-radius: 25px;
+  background-color: var(--state-not-checked);
+  outline: none;
+  margin: 0;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 900;
+}
+.switcher input:before,
+.switcher input:after {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--state-checked);
+}
+.switcher input:before {
+  content: attr(data-label-yes);
+  text-transform: uppercase;
+  left: var(--label-start-pos);
+}
+.switcher input:after {
+  content: attr(data-label-no);
+  text-transform: uppercase;
+  right: var(--label-start-pos);
+}
+.switcher label {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  border-radius: 20px;
+  z-index: 1;
+}
+.switcher.switcher-1 input {
+  transition: 0.25s -0.1s;
+}
+.switcher.switcher-1 input:checked {
+  background-color: var(--state-checked);
+}
+.switcher.switcher-1 input:checked:before {
+  color: var(--state-checked);
+  transition: color 0.5s 0.2s;
+}
+.switcher.switcher-1 input:checked:after {
+  color: var(--secondary-color);
+  transition: color 0.5s;
+}
+.switcher.switcher-1 input:checked + label {
+  left: var(--start-pos);
+  right: var(--size-sliding);
+  background: var(--state-not-checked);
+  transition: left 0.5s, right 0.4s 0.2s;
+}
+.switcher.switcher-1 input:not(:checked) {
+  background: var(--state-not-checked);
+  transition: background 0.5s -0.1s;
+}
+.switcher.switcher-1 input:not(:checked):before {
+  color: var(--secondary-color);
+  transition: color 0.5s;
+}
+.switcher.switcher-1 input:not(:checked):after {
+  color: var(--state-not-checked);
+  transition: color 0.5s 0.2s;
+}
+.switcher.switcher-1 input:not(:checked) + label {
+  left: var(--size-sliding);
+  right: var(--start-pos);
+  background: var(--state-checked);
+  transition: left 0.4s 0.2s, right 0.5s, background 0.35s -0.1s;
+}
+.switcher.switcher-2 {
+  overflow: hidden;
+}
+.switcher.switcher-2 input {
+  transition: background-color 0s 0.5s;
+}
+.switcher.switcher-2 input:before {
+  color: var(--state-not-checked);
+}
+.switcher.switcher-2 input:after {
+  color: var(--state-checked);
+}
+.switcher.switcher-2 input:checked {
+  background-color: var(--state-checked);
+}
+.switcher.switcher-2 input:checked + label {
+  background: var(--state-checked);
+  -webkit-animation: turn-on 0.5s ease-out;
+  animation: turn-on 0.5s ease-out;
+}
+@-webkit-keyframes turn-on {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@keyframes turn-on {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+.switcher.switcher-2 input:not(:checked) {
+  background: var(--state-not-checked);
+}
+.switcher.switcher-2 input:not(:checked) + label {
+  background: var(--state-not-checked);
+  -webkit-animation: turn-off 0.5s ease-out;
+  animation: turn-off 0.5s ease-out;
+}
+@-webkit-keyframes turn-off {
+  0% {
+    right: 100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+@keyframes turn-off {
+  0% {
+    right: 100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+.switcher.switcher-2 label {
+  top: 0px;
+  width: var(--size-width);
+  height: var(--size-height);
+  border-radius: 25px;
+}

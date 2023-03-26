@@ -1,0 +1,32 @@
+:host {
+  --heartRed: rgb(172, 16, 16);
+  --trademarkBlue: rgb(72, 180, 213);
+}
+
+.external {
+  color: rgb(170, 78, 78);
+}
+
+.trademark {
+  display: flex;
+  align-items: center;
+}
+
+.trademark svg * {
+  fill: inherit;
+}
+
+.trademark__hearts {
+  fill: var(--heartRed);
+  width: 15px;
+  height: 15px;
+}
+
+.trademark__erenndriel {
+  fill: var(--trademarkBlue);
+  width: 110px;
+  height: 30px;
+  border-bottom: 1px solid var(--trademarkBlue);
+  border-radius: 15%;
+  margin: 0 5px;
+}

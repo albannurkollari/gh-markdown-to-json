@@ -1,0 +1,13 @@
+# Libs
+node_modules/
+
+# Cypress output
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
