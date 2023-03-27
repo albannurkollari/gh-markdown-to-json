@@ -1,4 +1,4 @@
-# GitHub Markdown to JSON parser
+# GitHub Markdown to JSON parser [![Netlify Status](https://api.netlify.com/api/v1/badges/553a548c-9b15-4558-95a8-cbc8f2b7daa9/deploy-status)](https://app.netlify.com/sites/bani-gh-markdown-to-json/deploys)
 
 A lightweight web app solely built without any bundler, but `HTML`, `CSS` and `JS` while incorporating the usage of the modern approaches and APIs such as **_web components_**.
 
@@ -20,9 +20,9 @@ In order to parse the (_checked_) checkboxes/list-items, you have to have this k
   <details id="myFirstProperty">
   <summary>Your Property's Title Here</summary>
 
-  - [ ] firstOption
-  - [ ] secondOption
-  - [x] thirdOption
+- [ ] firstOption
+- [ ] secondOption
+- [x] thirdOption
   </details>
 </section>
 ```
