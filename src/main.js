@@ -33,7 +33,7 @@ let result = {};
 let stringifiedResult = "{}";
 
 function findE2EDataWithRegex() {
-  const fromTextOrHTML = elm.stateModeToggle.checked
+  const fromTextOrHTML = elm.viewModeToggle.checked
     ? "textContent"
     : "innerHTML";
 
