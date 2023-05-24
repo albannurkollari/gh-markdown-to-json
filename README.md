@@ -49,3 +49,5 @@ Except for `id="my-filters"` every other other value of `id` and labels are simp
 - **Toggle `markdown content's` view state**
 <em>A toggle<sup><em>switcheroo</em></sup> button with `RAW` and `HTML` states is at your disposal to switch between either modes, that transforms the given `markdown` body to either of the toggled state.</em>
 </details>
+
+MAC OS sucks!
